@@ -1,22 +1,16 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+const angular =require('angular');
+var MainController = require('./controllers/MainController.js')
 
+var app = angular.module('app', [MainController.name]);
+},{"./controllers/MainController.js":2,"angular":4}],2:[function(require,module,exports){
+const angular =require('angular');
 
-require('angular')
-var MainController = require('./controllers/MainController')
+module.exports = angular.module('app.MainController',[]).controller('MainController', function($scope) {
+   $scope.message = "new works!"
 
-var app = angular.module('app', [])
-app.controller('MainController', ['$scope', MainController])
-
-},{"./controllers/MainController":2,"angular":4}],2:[function(require,module,exports){
-
-
-
-angular.module('app').controller('MainController', function($scope, MainController) {
-
-	
-	});
-
-},{}],3:[function(require,module,exports){
+});
+},{"angular":4}],3:[function(require,module,exports){
 /**
  * @license AngularJS v1.5.8
  * (c) 2010-2016 Google, Inc. http://angularjs.org
